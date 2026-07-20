@@ -26,7 +26,7 @@ form.addEventListener("submit", async (e) => {
 
         console.log(userCredential.user);
 
-        window.location.href = "dashboard.html";
+        window.location.href = "login.html";
 
     } catch (error) {
 
