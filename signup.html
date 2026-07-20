@@ -132,7 +132,9 @@
 </section>
 
 <script>
-
+    
+import { auth } from "./firebase.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 const form = document.getElementById("signupForm");
 
 form.addEventListener("submit", function(e){
