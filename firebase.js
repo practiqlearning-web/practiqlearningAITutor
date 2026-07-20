@@ -1,12 +1,10 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
 const firebaseConfig = {
+
   apiKey: "AIzaSyCjAS4rs4MPQqVrD1DBdGSB-tN8aXdQa60",
   authDomain: "practiq-ai-professor.firebaseapp.com",
   projectId: "practiq-ai-professor",
@@ -16,6 +14,6 @@ const firebaseConfig = {
   measurementId: "G-3NNN97T3VC"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+export const auth = getAuth(app);
