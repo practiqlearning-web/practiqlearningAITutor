@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans | Practiq Academy</title>
+  <meta name="description" content="Explore individual courses and bundled learning programmes in AI, Machine Learning, Marketing, Management and Business Analytics at Practiq Academy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #7c3aed;
+      --dark: #172033;
+      --muted: #64748b;
+      --light: #f5f7ff;
+      --border: #e5e7eb;
+      --white: #ffffff;
+      --success: #15803d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 7%;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta, .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-weight: 600;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .nav-cta:hover, .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px #4f46e533;
+    }
+
+    .hero {
+      padding: 75px 7% 55px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, #e8eaff, transparent 40%),
+        linear-gradient(135deg, #f8faff, #f7f1ff);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 30px;
+      background: #e9e7ff;
+      color: var(--primary);
+      font-size: .8rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      max-width: 850px;
+      margin: 0 auto 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .pricing-section {
+      padding: 60px 7%;
+      max-width: 1500px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 25px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: 0 8px 30px #17203308;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px #17203312;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--primary);
+      box-shadow: 0 15px 40px #4f46e51c;
+    }
+
+    .popular {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      border-radius: 30px;
+      padding: 6px 15px;
+      color: white;
+      background: var(--primary);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .plan-type {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price-card h3 {
+      margin: 8px 0;
+      font-size: 1.4rem;
+    }
+
+    .description {
+      color: var(--muted);
+      font-size: .9rem;
+      min-height: 48px;
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0 5px;
+    }
+
+    .price strong {
+      font-size: 2.25rem;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .old-price {
+      color: #94a3b8;
+      text-decoration: line-through;
+      font-size: .95rem;
+    }
+
+    .billing {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-bottom: 22px;
+    }
+
+    .saving {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 5px 10px;
+      background: #dcfce7;
+      color: var(--success);
+      border-radius: 6px;
+      font-size: .75rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .features {
+      list-style: none;
+      margin: 10px 0 25px;
+      flex: 1;
+    }
+
+    .features li {
+      padding: 9px 0;
+      font-size: .88rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 800;
+      margin-right: 9px;
+    }
+
+    .price-card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .bundle-section {
+      background: var(--light);
+      padding: 65px 7%;
+    }
+
+    .bundle-section .pricing-grid {
+      max-width: 1350px;
+      margin: auto;
+    }
+
+    .bundle-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bundle-card.featured {
+      border: 2px solid var(--secondary);
+      box-shadow: 0 12px 35px #7c3aed16;
+    }
+
+    .bundle-label {
+      color: var(--secondary);
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .bundle-card h3 {
+      font-size: 1.35rem;
+      margin: 9px 0;
+    }
+
+    .bundle-card p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .bundle-price {
+      margin: 20px 0 5px;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .bundle-old {
+      color: #94a3b8;
+      text-decoration: line-through;
+      font-size: .95rem;
+      font-weight: 400;
+      margin-left: 5px;
+    }
+
+    .bundle-includes {
+      margin: 18px 0 25px;
+      padding-left: 20px;
+      flex: 1;
+    }
+
+    .bundle-includes li {
+      padding: 6px 0;
+      font-size: .88rem;
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 35px auto 0;
+      color: var(--muted);
+      font-size: .82rem;
+      text-align: center;
+    }
+
+    .cta {
+      padding: 70px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #312e81, #6d28d9);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #e0e7ff;
+    }
+
+    .btn-light {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 25px 7%;
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    @media (max-width: 1000px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .pricing-section, .bundle-section {
+        padding: 50px 5%;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .price-card, .bundle-card {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">Practiq Academy</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#individual">Individual Courses</a>
+      <a href="#bundles">Bundles</a>
+      <a href="free-masterclass.html" class="nav-cta">Book Free Masterclass</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Learn Skills. Build Projects. Grow.</span>
+    <h1>Choose Your Learning Path with <span class="gradient-text">Practiq Academy</span></h1>
+    <p>
+      Build practical skills across AI, Machine Learning, Business Analytics,
+      Marketing and Management. Start with one subject or choose a structured
+      bundle for broader learning.
+    </p>
+  </header>
+
+  <!-- INDIVIDUAL COURSES -->
+  <section class="pricing-section" id="individual">
+    <div class="section-heading">
+      <h2>Individual Learning Programmes</h2>
+      <p>Choose a focused programme based on your current goals.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <article class="price-card">
+        <span class="plan-type">AI & Technology</span>
+        <h3>AI & Machine Learning</h3>
+        <p class="description">Understand AI concepts and learn to apply them through guided practice.</p>
+        <div class="price"><strong>₹4,999</strong></div>
+        <div class="billing">Illustrative programme price</div>
+        <ul class="features">
+          <li>AI and ML fundamentals</li>
+          <li>Practical guided exercises</li>
+          <li>Beginner project work</li>
+          <li>Learning resources</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Explore Programme</a>
+      </article>
+
+      <article class="price-card">
+        <span class="plan-type">Data & Insights</span>
+        <h3>Business Analytics</h3>
+        <p class="description">Learn to interpret data and communicate useful business insights.</p>
+        <div class="price"><strong>₹3,999</strong></div>
+        <div class="billing">Illustrative programme price</div>
+        <ul class="features">
+          <li>Data analysis fundamentals</li>
+          <li>Excel and visualisation concepts</li>
+          <li>Business case exercises</li>
+          <li>Guided analytical project</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Explore Programme</a>
+      </article>
+
+      <article class="price-card">
+        <span class="plan-type">Business & Growth</span>
+        <h3>Digital Marketing</h3>
+        <p class="description">Explore digital channels, marketing strategy and performance measurement.</p>
+        <div class="price"><strong>₹3,499</strong></div>
+        <div class="billing">Illustrative programme price</div>
+        <ul class="features">
+          <li>Digital marketing foundations</li>
+          <li>Audience and content strategy</li>
+          <li>Campaign measurement</li>
+          <li>Practical marketing case</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Explore Programme</a>
+      </article>
+
+      <article class="price-card">
+        <span class="plan-type">Management</span>
+        <h3>Business & Management</h3>
+        <p class="description">Connect management concepts with practical business decisions.</p>
+        <div class="price"><strong>₹3,499</strong></div>
+        <div class="billing">Illustrative programme price</div>
+        <ul class="features">
+          <li>Management fundamentals</li>
+          <li>Business problem-solving</li>
+          <li>Decision-making case studies</li>
+          <li>Practical business exercises</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Explore Programme</a>
+      </article>
+
+      <article class="price-card">
+        <span class="plan-type">Productivity</span>
+        <h3>AI Tools for Productivity</h3>
+        <p class="description">Learn to use AI tools thoughtfully for research, planning and everyday tasks.</p>
+        <div class="price"><strong>₹1,999</strong></div>
+        <div class="billing">Illustrative programme price</div>
+        <ul class="features">
+          <li>AI tool fundamentals</li>
+          <li>Prompting and task workflows</li>
+          <li>Research and content exercises</li>
+          <li>Responsible AI use</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Explore Programme</a>
+      </article>
+
+      <article class="price-card">
+        <span class="plan-type">Personal Guidance</span>
+        <h3>1:1 Mentorship</h3>
+        <p class="description">Get focused guidance on learning goals, projects and next steps.</p>
+        <div class="price"><strong>₹500</strong></div>
+        <div class="billing">Illustrative price per session</div>
+        <ul class="features">
+          <li>Individual learning discussion</li>
+          <li>Goal-setting support</li>
+          <li>Project direction</li>
+          <li>Suggested next steps</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Request a Session</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BUNDLE PROGRAMMES -->
+  <section class="bundle-section" id="bundles">
+    <div class="section-heading">
+      <span class="eyebrow">Learn Across Domains</span>
+      <h2>Integrated Learning Bundles</h2>
+      <p>Combine business knowledge, technology and analytical thinking.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <article class="bundle-card">
+        <span class="bundle-label">Foundation</span>
+        <h3>AI + Business Starter</h3>
+        <p>For learners who want to explore AI and its business applications.</p>
+        <div class="bundle-price">₹7,999 <span class="bundle-old">₹9,999</span></div>
+        <span class="saving">Illustrative offer price</span>
+        <ul class="bundle-includes">
+          <li>AI and ML foundations</li>
+          <li>Business and management concepts</li>
+          <li>Introductory data analysis</li>
+          <li>Guided mini-projects</li>
+          <li>Structured learning roadmap</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Discuss This Bundle</a>
+      </article>
+
+      <article class="bundle-card featured">
+        <span class="bundle-label">Professional</span>
+        <h3>Business + AI + Analytics</h3>
+        <p>For students and professionals seeking a broader practical skill set.</p>
+        <div class="bundle-price">₹13,999 <span class="bundle-old">₹17,999</span></div>
+        <span class="saving">Illustrative offer price</span>
+        <ul class="bundle-includes">
+          <li>AI and ML applied concepts</li>
+          <li>Business analytics foundations</li>
+          <li>Marketing and management cases</li>
+          <li>Multiple guided projects</li>
+          <li>Portfolio-oriented learning</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Discuss This Bundle</a>
+      </article>
+
+      <article class="bundle-card">
+        <span class="bundle-label">Advanced</span>
+        <h3>Business AI Accelerator</h3>
+        <p>For learners seeking a longer, structured journey across all four domains.</p>
+        <div class="bundle-price">₹24,999 <span class="bundle-old">₹29,999</span></div>
+        <span class="saving">Illustrative offer price</span>
+        <ul class="bundle-includes">
+          <li>AI, ML and analytics learning path</li>
+          <li>Marketing and management applications</li>
+          <li>Extended project practice</li>
+          <li>Case-based problem-solving</li>]
+          <li>Mentorship options to be agreed</li>
+        </ul>
+        <a class="btn" href="free-masterclass.html">Discuss This Bundle</a>
+      </article>
+
+    </div>
+
+    <p class="note">
+      All prices and programme inclusions on this page are illustrative examples,
+      not confirmed Practiq Academy offers. Final fees, duration, delivery format,
+      mentorship, project count and applicable taxes should be confirmed before enrolment.
+    </p>
+  </section>
+
+  <section class="cta">
+    <h2>Not Sure Which Programme Fits You?</h2>
+    <p>
+      Book a free 1:1 masterclass to discuss your learning goals and explore
+      a suitable path before making a decision.
+    </p>
+    <a href="free-masterclass.html" class="btn-light">Book Your Free Masterclass</a>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Practiq Academy. Learn practically. Grow confidently.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
