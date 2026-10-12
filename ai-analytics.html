@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI in Business Analytics | 60-Day Programme | Practiq Academy</title>
+  <meta name="description" content="Learn AI-assisted data analysis, business intelligence, dashboards, predictive analytics and business decision-making through a practical 60-day programme at Practiq Academy.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #7c3aed;
+      --dark: #172033;
+      --muted: #64748b;
+      --light: #f6f7ff;
+      --border: #e5e7eb;
+      --success: #15803d;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 5%;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--dark);
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 13px 21px;
+      border-radius: 10px;
+      font: inherit;
+      font-weight: 700;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px #4f46e533;
+    }
+
+    .button-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .button-outline {
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      background: white;
+    }
+
+    .button-white {
+      background: white;
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 78px 0;
+      background:
+        radial-gradient(circle at 85% 12%, #ddd6fe, transparent 32%),
+        linear-gradient(135deg, #f8faff, #f5f0ff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      margin-bottom: 17px;
+      border-radius: 30px;
+      background: #e9e7ff;
+      color: var(--primary);
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 5vw, 3.8rem);
+      line-height: 1.16;
+      letter-spacing: -1.5px;
+      margin: 0 0 20px;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero p { color: var(--muted); }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .hero-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 28px;
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .overview-card {
+      background: white;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 18px 55px #25205b12;
+    }
+
+    .overview-card h2 {
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .check-list li {
+      padding: 9px 0 9px 27px;
+      position: relative;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .overview-card .check-list li {
+      border-bottom: 1px solid #f1f5f9;
+      font-size: .9rem;
+    }
+
+    .price {
+      font-size: 2.1rem;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    .old-price {
+      color: #94a3b8;
+      font-size: 1rem;
+      font-weight: 400;
+      text-decoration: line-through;
+    }
+
+    .saving {
+      display: inline-block;
+      padding: 4px 9px;
+      margin: 8px 0 15px;
+      background: #dcfce7;
+      color: var(--success);
+      border-radius: 6px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .section { padding: 75px 0; }
+
+    .section-light { background: var(--light); }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.25;
+    }
+
+    .section-heading p,
+    .muted { color: var(--muted); }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+    }
+
+    .card h3 {
+      font-size: 1.08rem;
+      margin: 12px 0 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 0;
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      background: #eeecff;
+      border-radius: 12px;
+      font-size: 1.4rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .two-col h2 {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      line-height: 1.3;
+      margin-top: 0;
+    }
+
+    .module-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .module {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 20px;
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .module-days {
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+    }
+
+    .module h3 {
+      font-size: 1.05rem;
+      margin: 0 0 7px;
+    }
+
+    .module p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 0 0 8px;
+    }
+
+    .module ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      font-size: .88rem;
+    }
+
+    .project-card { border-left: 4px solid var(--primary); }
+
+    .banner {
+      padding: 48px 30px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #312e81, #6d28d9);
+      border-radius: 24px;
+    }
+
+    .banner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 0 0 12px;
+    }
+
+    .banner p {
+      max-width: 720px;
+      margin: 0 auto 25px;
+      color: #e0e7ff;
+    }
+
+    .faq { max-width: 850px; margin: auto; }
+
+    .faq details {
+      margin-bottom: 12px;
+      padding: 18px 20px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .faq p {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 25px 5%;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: .85rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid, .two-col { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { padding: 55px 0; }
+    }
+
+    @media (max-width: 600px) {
+      .navbar { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 12px; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .section { padding: 52px 0; }
+      .module { grid-template-columns: 1fr; gap: 6px; }
+      .button { width: 100%; }
+      .hero-facts { gap: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Practiq Academy</a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">All Programmes</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#why-us">Why This Programme?</a>
+      <a href="free-masterclass.html">Free Masterclass</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <span class="eyebrow">60-Day Practical Programme</span>
+
+        <h1>
+          AI in <span class="gradient-text">Business Analytics</span>
+          <br>From Data to Decisions
+        </h1>
+
+        <p>
+          Learn how AI can support data preparation, exploratory analysis,
+          business intelligence, visualisation, forecasting and analytical
+          decision-making. Build your understanding through practical
+          exercises, business cases and a guided capstone project.
+        </p>
+
+        <div class="hero-actions">
+          <a href="free-masterclass.html" class="button button-primary">
+            Book a Free Masterclass
+          </a>
+
+          <a href="#curriculum" class="button button-outline">
+            Explore the Curriculum
+          </a>
+        </div>
+
+        <div class="hero-facts">
+          <div class="fact">
+            <strong>60 Days</strong>
+            <span>Programme duration</span>
+          </div>
+
+          <div class="fact">
+            <strong>8 Modules</strong>
+            <span>Structured roadmap</span>
+          </div>
+
+          <div class="fact">
+            <strong>Project-Based</strong>
+            <span>Applied learning</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="overview-card">
+        <span class="eyebrow">Programme Overview</span>
+
+        <h2>What You Will Explore</h2>
+
+        <ul class="check-list">
+          <li>AI-assisted data preparation and cleaning</li>
+          <li>Exploratory and descriptive analytics</li>
+          <li>Spreadsheet analysis and formulas</li>
+          <li>Business intelligence and dashboards</li>
+          <li>Predictive analytics foundations</li>
+          <li>Forecasting and business interpretation</li>
+          <li>Analytical reporting and recommendations</li>
+        </ul>
+
+        <div class="price">
+          ₹4,999 <span class="old-price">₹5,999</span>
+        </div>
+
+        <span class="saving">Illustrative launch saving: ₹1,000</span>
+
+        <p class="muted" style="font-size:.82rem">
+          Confirm the current fee, delivery format and learning schedule
+          during your free masterclass.
+        </p>
+
+        <a href="free-masterclass.html"
+           class="button button-primary"
+           style="width:100%; margin-top:15px">
+          Book Your Free Masterclass
+        </a>
+      </aside>
+
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="container two-col">
+
+      <div>
+        <span class="eyebrow">About the Programme</span>
+
+        <h2>Turn Business Data into Useful Insights</h2>
+
+        <p class="muted">
+          Organisations collect information about sales, customers,
+          operations, marketing and financial performance. The challenge
+          is to turn that information into sound business decisions.
+        </p>
+
+        <p class="muted">
+          AI can assist with preparing data, exploring patterns, generating
+          code or formulas, creating summaries and developing analytical
+          workflows. But useful analysis also requires clear questions,
+          appropriate methods, validation and business understanding.
+        </p>
+
+        <p class="muted">
+          This programme connects those skills through a practical,
+          business-oriented approach to analytics.
+        </p>
+      </div>
+
+      <div>
+        <h2>What You Will Work Towards</h2>
+
+        <ul class="check-list">
+          <li>Frame business problems as analytical questions.</li>
+          <li>Understand and prepare structured datasets.</li>
+          <li>Explore data using descriptive statistics and summaries.</li>
+          <li>Create charts, visualisations and dashboards.</li>
+          <li>Interpret patterns, trends and performance indicators.</li>
+          <li>Explore introductory forecasting and predictive models.</li>
+          <li>Validate AI-generated calculations and explanations.</li>
+          <li>Communicate insights through a business report.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY THIS PROGRAMME -->
+  <section class="section section-light" id="why-us">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">Why Choose This Programme?</span>
+        <h2>Learn Analytics with AI and Business Context</h2>
+        <p>
+          Build the analytical thinking needed to understand business
+          questions—not just generate charts or AI responses.
+        </p>
+      </div>
+
+      <div class="grid-3">
+
+        <article class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Business-Focused Learning</h3>
+          <p>
+            Work with examples from sales, marketing, finance, customer
+            behaviour and operational performance.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🤖</div>
+          <h3>AI-Assisted Workflows</h3>
+          <p>
+            Explore how AI can assist with formulas, data transformations,
+            analytical code, explanations and report drafting.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📊</div>
+          <h3>Data Visualisation</h3>
+          <p>
+            Learn how to select appropriate charts, interpret patterns
+            and communicate findings clearly.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔎</div>
+          <h3>Analytical Thinking</h3>
+          <p>
+            Practise asking useful questions, checking assumptions,
+            comparing evidence and avoiding misleading conclusions.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🧩</div>
+          <h3>Practical Projects</h3>
+          <p>
+            Apply your learning to sample business datasets and
+            develop a structured analytical project.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⚖️</div>
+          <h3>Responsible AI Use</h3>
+          <p>
+            Understand data privacy, bias, errors, reproducibility
+            and the importance of validating AI-generated outputs.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD JOIN -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">Who Is It For?</span>
+        <h2>Who Can Benefit from AI Analytics?</h2>
+        <p>
+          Designed for learners who want to connect data analysis
+          with real business questions.
+        </p>
+      </div>
+
+      <div class="grid-3">
+
+        <article class="card">
+          <div class="card-icon">🎓</div>
+          <h3>MBA & Management Students</h3>
+          <p>
+            Learn to interpret business performance and support
+            management decisions with evidence.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📈</div>
+          <h3>Aspiring Business Analysts</h3>
+          <p>
+            Develop foundational skills in data preparation,
+            visualisation, analysis and reporting.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">💼</div>
+          <h3>Working Professionals</h3>
+          <p>
+            Explore AI-assisted approaches to business reports,
+            performance monitoring and routine analysis.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🚀</div>
+          <h3>Entrepreneurs</h3>
+          <p>
+            Use data to examine sales trends, customer behaviour
+            and business performance.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📣</div>
+          <h3>Marketing & Finance Learners</h3>
+          <p>
+            Learn analytical techniques that can support campaign
+            measurement, budgeting and performance reporting.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌱</div>
+          <h3>Beginners Exploring Data</h3>
+          <p>
+            Start with foundational concepts before progressing
+            towards more advanced analytical applications.
+          </p>
+        </article>
+
+      </div>
+
+      <p class="muted" style="text-align:center; margin-top:25px; font-size:.88rem">
+        The proposed programme begins with fundamentals. Advanced coding
+        experience is not assumed, although spreadsheet and basic computer
+        familiarity will be helpful.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CURRICULUM -->
+  <section class="section section-light" id="curriculum">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">60-Day Learning Roadmap</span>
+        <h2>Explore the AI Analytics Curriculum</h2>
+        <p>
+          Eight proposed modules move from foundational data skills
+          towards business analysis, predictive methods and a capstone.
+          Confirm the final session schedule before enrolment.
+        </p>
+      </div>
+
+      <div class="module-list">
+
+        <article class="module">
+          <div class="module-days">Days 1–7</div>
+          <div>
+            <h3>Module 1: Foundations of AI & Business Analytics</h3>
+            <p>
+              Understand analytics, AI and the role of data in
+              business decision-making.
+            </p>
+            <ul>
+              <li>Descriptive, diagnostic, predictive and prescriptive analytics</li>
+              <li>Business questions and analytical problem framing</li>
+              <li>Structured data, variables and data types</li>
+              <li>AI capabilities, limitations and verification</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <div class="module-days">Days 8–15</div>
+          <div>
+            <h3>Module 2: Data Preparation & Spreadsheet Analysis</h3>
+            <p>
+              Learn how to inspect, organise and prepare data for
+              reliable analysis.
+            </p>
+            <ul>
+              <li>Data types, tables and basic data quality checks</li>
+              <li>Missing values, duplicates and inconsistent entries</li>
+              <li>Spreadsheet formulas and conditional calculations</li>
+              <li>AI-assisted formula generation and troubleshooting</li>
+              <li>Documenting data preparation decisions</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <div class="module-days">Days 16–23</div>
+          <div>
+            <h3>Module 3: Exploratory & Descriptive Analytics</h3>
+            <p>
+              Examine what a dataset contains and identify patterns
+              that deserve further investigation.
+            </p>
+            <ul>
+              <li>Counts, percentages, averages and distributions</li>
+              <li>Comparisons across products, regions or customer groups</li>
+              <li>Trend analysis and outlier identification</li>
+              <li>Correlation versus causation</li>
+              <li>AI-assisted interpretation with calculation checks</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <div class="module-days">Days 24–30</div>
+          <div>
+            <h3>Module 4: Data Visualisation & Dashboards</h3>
+            <p>
+              Present analytical findings in a clear and useful
+              format for business audiences.
+            </p>
+            <ul>
+              <li>Choosing appropriate charts and graphs</li>
+              <li>Data storytelling and visual communication</li>
+              <li>Key performance indicators and scorecards</li>
+              <li>Dashboard layout and information hierarchy</li>
+              <li>Interpreting dashboard findings</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <div class="module-days">Days 31–38</div>
+          <div>
+            <h3>Module 5: Business Intelligence & Performance Analysis</h3>
+            <p>
+              Connect data analysis with business performance
+              monitoring and operational questions.
+            </p>
+            <ul>
+              <li>Sales, revenue, cost and customer metrics</li>
+              <li>Actual performance versus targets</li>
+              <li>Variance and trend analysis</li>
+              <li>Segment and product performance comparisons</li>
+              <li>Turning findings into business recommendations</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <div class="module-days">Days 39–45</div>
+          <div>
+            <h3>Module 6: Predictive Analytics & Forecasting</h3>
+            <p>
+              Explore how historical data can be used to estimate
+              future outcomes and support planning.
+            </p>
+            <ul>
+              <li>Prediction problems and target variables</li>
+              <li>Forecasting concepts and trend-based projections</li>
+              <li>Introduction to regression and classification</li>
+              <li>Training and testing concepts</li>
+              <li>Prediction errors, limitations and uncertainty</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="module">
+          <div class="module-days">Days 46–52</div>
+          <div>
+            <h3>Module 7: AI-Assisted Insights & Decision Support</h3>
+            <p>
+              Use AI to assist in explaining findings and structuring
+              evidence-based recommendations.
+            </p>
+            <ul>
+              <li>AI-assisted analytical questions and workflows</li>
+              <li>Summarising tables, charts and results</li>
+              <li>Scenario comparison and decision frameworks</li>
+              <li>Checking calculations, sources and interpretations</li>
+              <li>Writing concise analytical reports</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="module project-card">
+          <div class="module-days">Days 53–60</div>
+          <div>
+            <h3>Module 8: Business Analytics Capstone</h3>
+            <p>
+              Apply the programme's concepts to a selected business
+              dataset and communicate the results.
+            </p>
+            <ul>
+              <li>Define a business problem and analysis objectives</li>
+              <li>Prepare and explore the dataset</li>
+              <li>Identify relevant trends and performance measures</li>
+              <li>Develop charts or a dashboard</li>
+              <li>Prepare a report with findings and recommendations</li>
+              <li>Present limitations and suggested next steps</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT IDEAS -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">Applied Learning</span>
+        <h2>Example Projects You Could Work On</h2>
+        <p>
+          Build practical experience by analysing sample datasets
+          and answering specific business questions.
+        </p>
+      </div>
+
+      <div class="grid-3">
+
+        <article class="card">
+          <div class="card-icon">🛒</div>
+          <h3>Sales Performance Analysis</h3>
+          <p>
+            Analyse sales across products, locations and time periods.
+            Identify patterns and propose performance improvements.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📊</div>
+          <h3>Business KPI Dashboard</h3>
+          <p>
+            Organise business metrics into a dashboard that helps
+            managers monitor targets and performance.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔮</div>
+          <h3>Demand Forecasting Exercise</h3>
+          <p>
+            Explore historical demand data, build a basic forecast
+            and explain the uncertainty in the results.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="section section-light">
+    <div class="container two-col">
+
+      <div>
+        <span class="eyebrow">Tools & Techniques</span>
+        <h2>Understand the Method, Then Use the Tools</h2>
+
+        <p class="muted">
+          AI can assist with analysis, but the quality of the result
+          depends on data quality, correct calculations and suitable
+          methods. The programme is designed to develop that understanding.
+        </p>
+
+        <p class="muted">
+          Tool selection should match the learner's level, the available
+          software and the intended project. Paid subscriptions are not
+          included unless explicitly stated.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Potential tools and learning areas</h3>
+        <ul class="check-list">
+          <li>AI assistants for analytical workflows</li>
+          <li>Spreadsheets for data preparation and analysis</li>
+          <li>Data visualisation and dashboard tools</li>
+          <li>Introductory statistical and predictive methods</li>
+          <li>AI-assisted formulas, code and explanations</li>
+          <li>Business reports and presentations</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LEARNING OUTCOMES -->
+  <section class="section">
+    <div class="container two-col">
+
+      <div>
+        <span class="eyebrow">Learning Outcomes</span>
+        <h2>What You Should Aim to Build in 60 Days</h2>
+
+        <p class="muted">
+          By completing the proposed learning activities and capstone,
+          learners should aim to develop foundational experience in
+          data preparation, analysis and communicating business insights.
+        </p>
+      </div>
+
+      <div>
+        <ul class="check-list">
+          <li>A cleaned and documented sample dataset</li>
+          <li>An exploratory data analysis summary</li>
+          <li>A set of business charts or visualisations</li>
+          <li>A KPI dashboard or performance report</li>
+          <li>A basic forecasting or predictive exercise</li>
+          <li>A final business analytics report</li>
+          <li>A presentation of findings and recommendations</li>
+        </ul>
+
+        <p class="muted" style="font-size:.85rem">
+          Actual deliverables depend on the final curriculum, chosen tools
+          and learner participation. The programme does not guarantee
+          employment or specific business results.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-light">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">Frequently Asked Questions</span>
+        <h2>Before You Join</h2>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>How long is the programme?</summary>
+          <p>
+            The proposed programme runs for 60 days. Confirm the final
+            timetable, session frequency and total learning hours before
+            enrolment.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need coding experience?</summary>
+          <p>
+            The programme starts with foundational analytics concepts.
+            Coding is not assumed as a prerequisite for the introductory
+            activities, although advanced technical work may require
+            additional practice.
+          </p>
+        </details>
+
+        <details>
+          <summary>Will I learn Power BI, Python or SQL?</summary>
+          <p>
+            The programme description includes spreadsheets, dashboards
+            and introductory predictive analytics. Confirm the exact
+            software and whether Python, SQL or Power BI are included
+            before enrolling.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is this programme suitable for MBA students?</summary>
+          <p>
+            Yes. Its business-focused examples can be relevant to MBA
+            and management learners interested in analytics and
+            evidence-based decision-making.
+          </p>
+        </details>
+
+        <details>
+          <summary>Will I complete a project?</summary>
+          <p>
+            The proposed roadmap includes a capstone during the final
+            eight days. Confirm the project brief, feedback and assessment
+            arrangements before enrolment.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I know if this programme is right for me?</summary>
+          <p>
+            Book a free masterclass to discuss your background, interests
+            and learning goals before deciding whether to enrol.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="banner">
+
+        <h2>Ready to Explore AI in Business Analytics?</h2>
+
+        <p>
+          Start with a free masterclass. Discuss your learning goals,
+          explore the proposed learning approach and understand the
+          programme before deciding to enrol.
+        </p>
+
+        <a href="free-masterclass.html"
+           class="button button-white">
+          Book Your Free Masterclass
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      © <span id="currentYear"></span> Practiq Academy.
+      Learn practically. Grow confidently.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
