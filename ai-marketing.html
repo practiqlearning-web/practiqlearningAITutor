@@ -1,0 +1,1132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI in Marketing | 60-Day Programme | Practiq Academy</title>
+
+  <meta name="description"
+    content="Learn AI-powered marketing, consumer behaviour, digital marketing, branding, market research, CRM and marketing strategy through a practical 60-day programme at Practiq Academy.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --am-primary: #4f46e5;
+      --am-secondary: #7c3aed;
+      --am-dark: #172033;
+      --am-muted: #64748b;
+      --am-bg: #f7f8ff;
+      --am-border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--am-dark);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .am-container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .am-nav {
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--am-border);
+      background: #fff;
+    }
+
+    .am-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--am-primary);
+    }
+
+    .am-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .am-nav-links a {
+      color: var(--am-dark);
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    .am-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font: inherit;
+      font-size: .94rem;
+      font-weight: 700;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .am-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 25px #4f46e533;
+    }
+
+    .am-button-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--am-primary), var(--am-secondary));
+    }
+
+    .am-button-outline {
+      color: var(--am-primary);
+      border: 1px solid var(--am-primary);
+      background: #fff;
+    }
+
+    .am-hero {
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at 85% 10%, #ddd6fe 0, transparent 32%),
+        linear-gradient(135deg, #f8faff, #f5f0ff);
+    }
+
+    .am-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .am-eyebrow {
+      display: inline-block;
+      background: #e9e7ff;
+      color: var(--am-primary);
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: .8rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .am-hero h1 {
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      line-height: 1.16;
+      letter-spacing: -1.5px;
+      margin: 0 0 20px;
+    }
+
+    .am-gradient {
+      background: linear-gradient(135deg, var(--am-primary), var(--am-secondary));
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .am-hero p {
+      color: var(--am-muted);
+      margin-bottom: 25px;
+    }
+
+    .am-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .am-facts {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .am-fact strong {
+      display: block;
+      font-size: 1.15rem;
+    }
+
+    .am-fact span {
+      color: var(--am-muted);
+      font-size: .82rem;
+    }
+
+    .am-hero-card {
+      background: #fff;
+      border: 1px solid var(--am-border);
+      padding: 28px;
+      border-radius: 22px;
+      box-shadow: 0 18px 55px #25205b12;
+    }
+
+    .am-hero-card h2 {
+      font-size: 1.35rem;
+      margin-top: 0;
+    }
+
+    .am-hero-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .am-hero-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: .9rem;
+    }
+
+    .am-hero-card li::before {
+      content: "✓";
+      color: #15803d;
+      font-weight: 800;
+      margin-right: 10px;
+    }
+
+    .am-price {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .am-old-price {
+      color: #94a3b8;
+      font-size: 1rem;
+      text-decoration: line-through;
+      font-weight: 400;
+    }
+
+    .am-saving {
+      display: inline-block;
+      color: #15803d;
+      background: #dcfce7;
+      border-radius: 6px;
+      padding: 4px 9px;
+      font-size: .8rem;
+      font-weight: 700;
+      margin: 8px 0 18px;
+    }
+
+    .am-section {
+      padding: 75px 0;
+    }
+
+    .am-section-light {
+      background: var(--am-bg);
+    }
+
+    .am-section-heading {
+      max-width: 760px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .am-section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    .am-section-heading p {
+      color: var(--am-muted);
+      margin: 0;
+    }
+
+    .am-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .am-card {
+      padding: 25px;
+      background: #fff;
+      border: 1px solid var(--am-border);
+      border-radius: 17px;
+    }
+
+    .am-card h3 {
+      margin: 12px 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .am-card p {
+      margin: 0;
+      color: var(--am-muted);
+      font-size: .9rem;
+    }
+
+    .am-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #eeecff;
+      font-size: 1.4rem;
+    }
+
+    .am-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .am-two-col h2 {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      line-height: 1.3;
+      margin-top: 0;
+    }
+
+    .am-muted {
+      color: var(--am-muted);
+    }
+
+    .am-check-list {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0;
+    }
+
+    .am-check-list li {
+      padding: 9px 0 9px 28px;
+      position: relative;
+    }
+
+    .am-check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #15803d;
+      font-weight: 800;
+    }
+
+    .am-module-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .am-module {
+      display: grid;
+      grid-template-columns: 115px 1fr;
+      gap: 20px;
+      background: #fff;
+      padding: 22px;
+      border: 1px solid var(--am-border);
+      border-radius: 15px;
+    }
+
+    .am-days {
+      color: var(--am-primary);
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .am-module h3 {
+      margin: 0 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .am-module p {
+      margin: 0 0 8px;
+      color: var(--am-muted);
+      font-size: .9rem;
+    }
+
+    .am-module ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      font-size: .88rem;
+    }
+
+    .am-project {
+      border-left: 4px solid var(--am-primary);
+    }
+
+    .am-banner {
+      padding: 48px 30px;
+      text-align: center;
+      color: #fff;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #312e81, #6d28d9);
+    }
+
+    .am-banner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 0 0 12px;
+    }
+
+    .am-banner p {
+      max-width: 720px;
+      color: #e0e7ff;
+      margin: 0 auto 25px;
+    }
+
+    .am-button-white {
+      background: #fff;
+      color: var(--am-primary);
+    }
+
+    .am-faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .am-faq details {
+      padding: 18px 20px;
+      border: 1px solid var(--am-border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background: #fff;
+    }
+
+    .am-faq summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .am-faq p {
+      color: var(--am-muted);
+      margin-bottom: 0;
+      font-size: .92rem;
+    }
+
+    .am-footer {
+      padding: 25px 5%;
+      text-align: center;
+      color: var(--am-muted);
+      font-size: .85rem;
+      border-top: 1px solid var(--am-border);
+    }
+
+    @media (max-width: 850px) {
+      .am-hero-grid,
+      .am-two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .am-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .am-hero {
+        padding: 55px 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .am-nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .am-nav-links {
+        gap: 12px;
+      }
+
+      .am-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .am-section {
+        padding: 52px 0;
+      }
+
+      .am-module {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .am-facts {
+        gap: 16px;
+      }
+
+      .am-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="am-nav">
+    <a href="index.html" class="am-logo">Practiq Academy</a>
+
+    <div class="am-nav-links">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">All Programmes</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#why-us">Why This Programme?</a>
+      <a href="free-masterclass.html">Free Masterclass</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="am-hero">
+    <div class="am-container am-hero-grid">
+
+      <div>
+        <span class="am-eyebrow">60-Day Practical Programme</span>
+
+        <h1>
+          AI in <span class="am-gradient">Marketing</span>
+          <br>From Concepts to Application
+        </h1>
+
+        <p>
+          Learn how artificial intelligence can support consumer understanding,
+          digital marketing, branding, market research, customer relationship
+          management and marketing strategy. Apply these concepts to practical
+          business problems through guided exercises and projects.
+        </p>
+
+        <div class="am-actions">
+          <a href="free-masterclass.html" class="am-button am-button-primary">
+            Book a Free Masterclass
+          </a>
+
+          <a href="#curriculum" class="am-button am-button-outline">
+            Explore the Curriculum
+          </a>
+        </div>
+
+        <div class="am-facts">
+          <div class="am-fact">
+            <strong>60 Days</strong>
+            <span>Programme duration</span>
+          </div>
+
+          <div class="am-fact">
+            <strong>6 Domains</strong>
+            <span>Marketing specialisations</span>
+          </div>
+
+          <div class="am-fact">
+            <strong>Project-Based</strong>
+            <span>Practical application</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="am-hero-card">
+        <span class="am-eyebrow">Programme Overview</span>
+
+        <h2>What You Will Explore</h2>
+
+        <ul>
+          <li>Consumer behaviour and customer insights</li>
+          <li>AI-assisted digital marketing</li>
+          <li>Branding and content strategy</li>
+          <li>AI-supported market research</li>
+          <li>Customer relationship management (CRM)</li>
+          <li>Marketing strategy and performance measurement</li>
+        </ul>
+
+        <div class="am-price">
+          ₹3,999
+          <span class="am-old-price">₹4,999</span>
+        </div>
+
+        <span class="am-saving">Illustrative launch saving: ₹1,000</span>
+
+        <p class="am-muted" style="font-size:.82rem">
+          Check the current offer, delivery format and programme details
+          during your free masterclass.
+        </p>
+
+        <a href="free-masterclass.html" class="am-button am-button-primary"
+           style="width:100%; margin-top:15px">
+          Book Your Free Masterclass
+        </a>
+      </aside>
+
+    </div>
+  </header>
+
+  <!-- INTRODUCTION -->
+  <section class="am-section">
+    <div class="am-container am-two-col">
+
+      <div>
+        <span class="am-eyebrow">About the Programme</span>
+
+        <h2>Marketing Knowledge Meets Artificial Intelligence</h2>
+
+        <p class="am-muted">
+          Marketing is more than creating posts or running advertisements.
+          It involves understanding people, researching markets, building
+          brands, managing customer relationships and making strategic
+          decisions.
+        </p>
+
+        <p class="am-muted">
+          This programme explores how AI tools and analytical methods can
+          support each of these activities. The emphasis is on applying
+          marketing concepts, asking better questions, interpreting outputs
+          and making informed decisions—not simply generating content.
+        </p>
+      </div>
+
+      <div>
+        <h2>What You Can Work Towards</h2>
+
+        <ul class="am-check-list">
+          <li>Use AI tools to support marketing research and planning.</li>
+          <li>Develop audience profiles and customer personas.</li>
+          <li>Plan content and digital marketing campaigns.</li>
+          <li>Explore brand positioning and messaging.</li>
+          <li>Interpret customer feedback and marketing performance.</li>
+          <li>Build a portfolio project around a marketing problem.</li>
+          <li>Recognise limitations, bias and responsible uses of AI.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHO SHOULD JOIN -->
+  <section class="am-section am-section-light">
+    <div class="am-container">
+
+      <div class="am-section-heading">
+        <span class="am-eyebrow">Who Is It For?</span>
+        <h2>Is This Programme Right for You?</h2>
+        <p>
+          Designed for learners who want to connect marketing fundamentals
+          with the practical use of AI.
+        </p>
+      </div>
+
+      <div class="am-grid-3">
+
+        <article class="am-card">
+          <div class="am-icon">🎓</div>
+          <h3>Management & MBA Students</h3>
+          <p>
+            Connect marketing management, consumer behaviour and strategy
+            with AI-supported business applications.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">📱</div>
+          <h3>Digital Marketing Learners</h3>
+          <p>
+            Explore AI-assisted content, campaign planning, audience
+            research and performance analysis.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">💼</div>
+          <h3>Working Professionals</h3>
+          <p>
+            Investigate practical AI workflows that may support research,
+            reporting, planning and marketing tasks.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">🚀</div>
+          <h3>Entrepreneurs</h3>
+          <p>
+            Explore customer needs, brand messaging, competitor research
+            and marketing planning for a business idea.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">📊</div>
+          <h3>Aspiring Marketing Analysts</h3>
+          <p>
+            Build familiarity with customer insights, campaign metrics
+            and evidence-based marketing decisions.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">🌱</div>
+          <h3>Beginners Exploring AI</h3>
+          <p>
+            Start with guided activities and progressively explore
+            marketing applications without assuming advanced AI knowledge.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="am-section" id="why-us">
+    <div class="am-container">
+
+      <div class="am-section-heading">
+        <span class="am-eyebrow">Why Practiq Academy?</span>
+        <h2>Learn to Apply AI to Marketing Problems</h2>
+        <p>
+          Understand the reasoning behind marketing decisions as well as
+          the tools that can support them.
+        </p>
+      </div>
+
+      <div class="am-grid-3">
+
+        <article class="am-card">
+          <div class="am-icon">🧠</div>
+          <h3>Marketing Fundamentals First</h3>
+          <p>
+            Learn how consumer behaviour, branding, research and strategy
+            connect to practical AI applications.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">🛠️</div>
+          <h3>Practical AI Workflows</h3>
+          <p>
+            Explore prompting, research assistance, content planning and
+            analysis using relevant AI tools.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">📈</div>
+          <h3>Data-Informed Decisions</h3>
+          <p>
+            Learn to examine marketing metrics and customer feedback
+            rather than relying entirely on AI-generated suggestions.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">🧩</div>
+          <h3>Business Case Applications</h3>
+          <p>
+            Apply concepts to sample business scenarios, marketing
+            challenges and guided exercises.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">📁</div>
+          <h3>Project-Oriented Learning</h3>
+          <p>
+            Develop a practical marketing project that demonstrates
+            your approach to a defined business problem.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">⚖️</div>
+          <h3>Responsible AI Practice</h3>
+          <p>
+            Consider accuracy, copyright, privacy, bias and the need
+            for human review when using AI outputs.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM -->
+  <section class="am-section am-section-light" id="curriculum">
+    <div class="am-container">
+
+      <div class="am-section-heading">
+        <span class="am-eyebrow">60-Day Learning Roadmap</span>
+        <h2>Explore the Curriculum</h2>
+        <p>
+          A proposed learning structure moving from marketing foundations
+          to applied AI workflows and a final project. The precise weekly
+          schedule can be finalised before the cohort begins.
+        </p>
+      </div>
+
+      <div class="am-module-list">
+
+        <article class="am-module">
+          <div class="am-days">Days 1–7</div>
+          <div>
+            <h3>Module 1: Introduction to AI in Marketing</h3>
+            <p>
+              Understand AI, generative AI and their applications across
+              marketing functions.
+            </p>
+            <ul>
+              <li>AI, machine learning and generative AI fundamentals</li>
+              <li>Prompt design for marketing tasks</li>
+              <li>Evaluating AI responses and checking accuracy</li>
+              <li>Responsible use of customer and business data</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="am-module">
+          <div class="am-days">Days 8–15</div>
+          <div>
+            <h3>Module 2: Consumer Behaviour & Customer Insights</h3>
+            <p>
+              Explore how AI can support understanding customer needs,
+              motivations and buying behaviour.
+            </p>
+            <ul>
+              <li>Consumer needs, motivations and purchase journeys</li>
+              <li>Customer personas and audience profiles</li>
+              <li>Segmentation and customer journey mapping</li>
+              <li>Analysing sample reviews and customer feedback</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="am-module">
+          <div class="am-days">Days 16–23</div>
+          <div>
+            <h3>Module 3: AI-Powered Digital Marketing</h3>
+            <p>
+              Explore how AI can assist with digital campaign planning
+              and channel-specific marketing activities.
+            </p>
+            <ul>
+              <li>Digital marketing channels and campaign objectives</li>
+              <li>Content calendars and campaign ideation</li>
+              <li>SEO research and search-intent exploration</li>
+              <li>Social media planning and audience engagement</li>
+              <li>Campaign KPIs and performance measurement</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="am-module">
+          <div class="am-days">Days 24–30</div>
+          <div>
+            <h3>Module 4: AI for Branding & Content Strategy</h3>
+            <p>
+              Examine how AI can support brand research, communication
+              and consistent messaging.
+            </p>
+            <ul>
+              <li>Brand identity, positioning and differentiation</li>
+              <li>Brand voice and messaging frameworks</li>
+              <li>Content briefs and creative ideation</li>
+              <li>Reviewing AI-generated copy for quality and originality</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="am-module">
+          <div class="am-days">Days 31–38</div>
+          <div>
+            <h3>Module 5: AI-Assisted Market Research</h3>
+            <p>
+              Use AI to support research planning, information organisation
+              and preliminary interpretation.
+            </p>
+            <ul>
+              <li>Research objectives and questionnaire planning</li>
+              <li>Competitor and market research frameworks</li>
+              <li>Organising survey responses and open-ended feedback</li>
+              <li>Basic sentiment and theme analysis</li>
+              <li>Source verification and research limitations</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="am-module">
+          <div class="am-days">Days 39–45</div>
+          <div>
+            <h3>Module 6: AI & Customer Relationship Management</h3>
+            <p>
+              Explore how customer data and AI-supported workflows may
+              help businesses manage customer relationships.
+            </p>
+            <ul>
+              <li>CRM concepts and customer lifecycle management</li>
+              <li>Customer segmentation and personalisation</li>
+              <li>Customer support and response workflows</li>
+              <li>Retention, loyalty and engagement metrics</li>
+              <li>Privacy-aware customer data practices</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="am-module">
+          <div class="am-days">Days 46–52</div>
+          <div>
+            <h3>Module 7: AI-Enabled Marketing Strategy</h3>
+            <p>
+              Connect customer understanding, brand positioning, channels
+              and business objectives into a coherent strategy.
+            </p>
+            <ul>
+              <li>Market positioning and value propositions</li>
+              <li>Marketing objectives, segmentation and targeting</li>
+              <li>AI-assisted campaign planning</li>
+              <li>Budget and KPI considerations</li>
+              <li>Interpreting results and recommending improvements</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="am-module am-project">
+          <div class="am-days">Days 53–60</div>
+          <div>
+            <h3>Module 8: Capstone Project & Presentation</h3>
+            <p>
+              Bring the concepts together in a practical marketing
+              challenge using a sample business or a suitable project brief.
+            </p>
+            <ul>
+              <li>Define the marketing problem and target audience</li>
+              <li>Conduct customer and competitor research</li>
+              <li>Develop a brand or campaign strategy</li>
+              <li>Define KPIs and an evaluation approach</li>
+              <li>Present recommendations with supporting evidence</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT IDEAS -->
+  <section class="am-section">
+    <div class="am-container">
+
+      <div class="am-section-heading">
+        <span class="am-eyebrow">Learn by Applying</span>
+        <h2>Examples of Practical Projects</h2>
+        <p>
+          Work with a defined business problem and demonstrate how AI
+          can support the research, planning or analysis process.
+        </p>
+      </div>
+
+      <div class="am-grid-3">
+
+        <article class="am-card">
+          <div class="am-icon">🎯</div>
+          <h3>Customer Persona & Journey</h3>
+          <p>
+            Develop customer personas from a sample brief and map the
+            journey from awareness to purchase and retention.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">📣</div>
+          <h3>Digital Campaign Plan</h3>
+          <p>
+            Create a campaign brief, content calendar, audience strategy
+            and KPI framework for a sample brand.
+          </p>
+        </article>
+
+        <article class="am-card">
+          <div class="am-icon">🔍</div>
+          <h3>Market & Customer Research</h3>
+          <p>
+            Organise sample customer feedback, identify themes and
+            develop evidence-based marketing recommendations.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="am-section am-section-light">
+    <div class="am-container am-two-col">
+
+      <div>
+        <span class="am-eyebrow">Tools & Applications</span>
+        <h2>Learn Workflows, Not Just Tool Names</h2>
+        <p class="am-muted">
+          The programme can use selected AI assistants, research tools,
+          spreadsheet applications and marketing platforms to demonstrate
+          practical workflows.
+        </p>
+        <p class="am-muted">
+          Exact tools will depend on the cohort's level, access to free
+          plans and the learning activities selected for the programme.
+          Paid software subscriptions are not included unless explicitly
+          stated.
+        </p>
+      </div>
+
+      <div class="am-card">
+        <h3>Possible learning applications</h3>
+        <ul class="am-check-list">
+          <li>AI-assisted research and brainstorming</li>
+          <li>Prompting and content development</li>
+          <li>Customer feedback analysis</li>
+          <li>Marketing planning and campaign measurement</li>
+          <li>Spreadsheet-based analysis and reporting</li>
+          <li>Human review of AI-generated outputs</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="am-section">
+    <div class="am-container am-two-col">
+
+      <div>
+        <span class="am-eyebrow">Learning Outcomes</span>
+        <h2>What You Should Aim to Build in 60 Days</h2>
+        <p class="am-muted">
+          By completing the learning activities and project work, learners
+          should aim to develop practical familiarity with AI-supported
+          marketing workflows.
+        </p>
+      </div>
+
+      <div>
+        <ul class="am-check-list">
+          <li>A structured marketing research brief</li>
+          <li>Customer persona and journey documentation</li>
+          <li>A digital campaign and content plan</li>
+          <li>A brand messaging or positioning exercise</li>
+          <li>A basic customer feedback analysis</li>
+          <li>A marketing strategy and KPI framework</li>
+          <li>A final project presentation or report</li>
+        </ul>
+
+        <p class="am-muted" style="font-size:.85rem">
+          Actual deliverables depend on participation, the selected project
+          and the final curriculum. Completion does not guarantee employment
+          or specific business results.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="am-section am-section-light">
+    <div class="am-container">
+
+      <div class="am-section-heading">
+        <span class="am-eyebrow">Frequently Asked Questions</span>
+        <h2>Before You Join</h2>
+      </div>
+
+      <div class="am-faq">
+
+        <details>
+          <summary>How long is the programme?</summary>
+          <p>
+            The programme is designed for 60 days. The weekly timetable,
+            session frequency and total learning hours should be confirmed
+            before enrolment.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need prior AI or coding experience?</summary>
+          <p>
+            The proposed curriculum starts with AI and marketing fundamentals.
+            Coding is not a stated prerequisite for the activities described
+            on this page.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is this programme only for marketing students?</summary>
+          <p>
+            No. It is intended for marketing and management students,
+            working professionals, entrepreneurs and beginners interested
+            in AI-supported marketing.
+          </p>
+        </details>
+
+        <details>
+          <summary>Will I complete a project?</summary>
+          <p>
+            The proposed roadmap includes a capstone project during the
+            final eight days. Confirm the project format, feedback and
+            assessment arrangements before joining.
+          </p>
+        </details>
+
+        <details>
+          <summary>How can I check whether the programme suits me?</summary>
+          <p>
+            Book a free masterclass to discuss your interests, experience
+            and learning goals before deciding whether to enrol.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="am-section">
+    <div class="am-container">
+      <div class="am-banner">
+
+        <h2>Ready to Explore AI in Marketing?</h2>
+
+        <p>
+          Start with a free masterclass. Explore the learning approach,
+          discuss your goals and understand the programme before making
+          an enrolment decision.
+        </p>
+
+        <a href="free-masterclass.html"
+           class="am-button am-button-white">
+          Book Your Free Masterclass
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="am-footer">
+    <p>
+      © <span id="currentYear"></span> Practiq Academy.
+      Learn practically. Grow confidently.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
